@@ -13,3 +13,23 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+
+button {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border:2px solid rgb(30, 196, 15);
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: aqua;
+}
+button:hover > i {
+    color: white;
+}
