@@ -17,7 +17,7 @@ body{
 button {
     background-color: white;
     color: rgb(0, 0, 0);
-    border:2px solid rgb(30, 196, 15);
+    border:2px solid rgb(0, 0, 0);
     padding: .3rem .6rem;
     font-size: 1rem;
     cursor:pointer;
@@ -32,4 +32,13 @@ button:hover {
 }
 button:hover > i {
     color: white;
+}
+button i {
+    color: #102f5e;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input, select {
+    padding: 0.25rem 0.5rem;
 }
