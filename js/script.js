@@ -29,21 +29,43 @@ const saveTodo = (text) => {
     todo.appendChild(editBtn)
     
     const deleteBtn = document.createElement("button")
-    deleteBtn.classList.add("remoove-todo")
+    deleteBtn.classList.add("remove-todo")
     deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
     todo.appendChild(deleteBtn)
 
     todoList.appendChild(todo);
+
+    todoInput.value = "";
+    todoInput.focus();
 };
+
+const
 
 //eventos
 
 todoForm.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    const inputValue = todoInput.value
+    const inputValue = todoInput.value;
 
     if(inputValue) {
-       saveTodo(inputValue)
+       saveTodo(inputValue);
     }
-})
+});
+
+document.addEventListener("click", (e) =>{
+    const targetEl = e.target;
+    const parentEl = targetEl.closest("div");
+
+
+    if(targetEl.classList.contains("finish-todo")) {
+        parentEl.classList.toggle("done");
+    }
+
+    if(targetEl.classList.contains("remove-todo")) {
+        parentEl.remove();
+    }
+    if(targetEl.classList.contains("edit-todo")) {
+        console.log("Editou");
+    }
+});
