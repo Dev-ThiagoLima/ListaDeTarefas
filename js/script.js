@@ -46,6 +46,21 @@ const toggleForms = () => {
     todoList.classList.toggle("hide");
 };
 
+const updateTodo = (text) => {
+
+    const todos = document.querySelectorAll(".todo")
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3")
+
+        if(todoTitle.innerText === oldInputValue) {
+            todoTitle.innerText = text;
+        }
+    });
+
+
+}
+
 //eventos
 
 todoForm.addEventListener("submit", (e) =>{
@@ -78,8 +93,8 @@ document.addEventListener("click", (e) =>{
     if(targetEl.classList.contains("edit-todo")) {
         toggleForms();
 
-        editInput.value = todoTitle
-        oldInputValue.value = todoTitle
+        editInput.value = todoTitle;
+        oldInputValue = todoTitle;
     }
 });
 
