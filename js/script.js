@@ -86,5 +86,17 @@ document.addEventListener("click", (e) =>{
 cancelEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    toggleforms();
+    toggleForms();
+});
+
+editForm.addEventListener("submit", (e) =>{
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if(editInputValue) {
+        updateTodo(editInputValue)
+    }
+
+    toggleForms()
 })
